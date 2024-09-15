@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 9f6c2110d0868a24db0cec24c6aadaa9
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - Baco: {fileID: 8300000, guid: 293dd68009a8e244e9c3bb74a1bf446a, type: 3}
+  - Cabeca: {fileID: 8300000, guid: ecbc87c0672941e47a3b82ee360946d7, type: 3}
+  - Cauda: {fileID: 8300000, guid: 9baaf25f2868d024594cc6459d0cfdf7, type: 3}
+  - Corpo: {fileID: 8300000, guid: 96752e281ecfd4e4981eef7f232e3085, type: 3}
+  - Pancreas: {fileID: 8300000, guid: a3bddb7635716f147891873a674ca2e5, type: 3}
+  - Veiacava: {fileID: 8300000, guid: dd3af4d047af26e45a962bad70d8c817, type: 3}
+  - Vesicula: {fileID: 8300000, guid: 1f3bf91e6a8e66d4ea3dc51affb9b562, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

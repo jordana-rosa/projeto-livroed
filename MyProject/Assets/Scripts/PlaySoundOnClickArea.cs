@@ -1,15 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlaySoundOnClickArea : MonoBehaviour
 {
-    public AudioClip baco, cabeca, cauda, corpo, pancreas, veiacava, vesicula;
+    public AudioClip Baco, Cabeca, Cauda, Corpo, Pancreas, Veiacava, Vesicula;
     private AudioSource audioSource;
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            Debug.LogError("AudioSource component is missing from this GameObject.");
+        }
     }
 
     void Update()
@@ -47,32 +49,44 @@ public class PlaySoundOnClickArea : MonoBehaviour
 
                 // Identifica qual objeto foi tocado e toca o áudio correspondente
                 string clickedObject = hit.collider.gameObject.name;
+                Debug.Log("Clicked object: " + clickedObject); // Mensagem de depuração
 
                 switch (clickedObject)
                 {
-                    case "Baco":
-                        audioSource.PlayOneShot(baco);
+                    case "GameObjects - Baco":
+                        audioSource.PlayOneShot(Baco);
                         break;
-                    case "Cabeca":
-                        audioSource.PlayOneShot(cabeca);
+                    case "GameObjects - Cabeca":
+                        audioSource.PlayOneShot(Cabeca);
                         break;
-                    case "Cauda":
-                        audioSource.PlayOneShot(cauda);
+                    case "GameObjects - Cauda":
+                        audioSource.PlayOneShot(Cauda);
                         break;
-                    case "Corpo":
-                        audioSource.PlayOneShot(corpo);
+                    case "GameObjects - Corpo":
+                        audioSource.PlayOneShot(Corpo);
                         break;
-                    case "Pancreas":
-                        audioSource.PlayOneShot(pancreas);
+                    case "GameObjects - Pancreas":
+                        audioSource.PlayOneShot(Pancreas);
                         break;
-                    case "VeiaCava":
-                        audioSource.PlayOneShot(veiacava);
+                    case "GameObjects - VeiaCava":
+                        audioSource.PlayOneShot(Veiacava);
                         break;
-                    case "Vesicula":
-                        audioSource.PlayOneShot(vesicula);
+                    case "GameObjects - Vesicula":
+                        audioSource.PlayOneShot(Vesicula);
+                        break;
+                    default:
+                        Debug.LogWarning("No matching case for clicked object.");
                         break;
                 }
             }
+            else
+            {
+                Debug.LogWarning("No collider hit.");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Raycast did not hit anything.");
         }
     }
 }
